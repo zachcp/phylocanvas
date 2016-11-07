@@ -4,21 +4,29 @@
 #'
 #' @import htmlwidgets
 #'
+#' @param tree Required. Newick string of a phyloseq tree.
+#' @param treetype. Optional. Default \code{"rectangular"}. Can be one of "rectengular", "circular",
+#' "hierarchical",  or "radial".
+#' @param nodesize Optional. Default \code{30}. Global nodesize.
+#' @param textsize Optional. Default \code{30}. Global textsize.
+#' @param alignlabels Optional. Default \code{TRUE}. Whether to align node labels
 #' @export
 phylocanvas <- function(tree,
                         treetype = "rectangular",
                         nodesize = 30,
                         textsize = 30,
                         linewidth = 3,
+                        alignlabels= TRUE,
                         width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
-    tree = tree,
+    tree=tree,
     treetype=treetype,
-    nodesize = nodesize,
+    nodesize=nodesize,
     textsize=textsize,
-    linewidth=linewidth
+    linewidth=linewidth,
+    alignlabels=alignlabels
   )
 
   # create widget
