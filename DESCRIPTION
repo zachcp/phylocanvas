@@ -5,7 +5,7 @@ Authors@R: person("zachary", "charlop-powers", email = "zach.charlop.powers@gmai
 Description: What the package does (one paragraph).
 Depends:
     R (>= 3.3.1)
-License: LGPL
+License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
