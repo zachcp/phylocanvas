@@ -1,0 +1,11 @@
+Package: phylocanvas
+Title: Interactive phylogenetic trees using phylocnavas
+Version: 0.0.0.9000
+Authors@R: person("zachary", "charlop-powers", email = "zach.charlop.powers@gmail.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+Depends:
+    R (>= 3.3.1)
+License: LGPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
