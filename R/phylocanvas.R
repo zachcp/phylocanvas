@@ -6,7 +6,7 @@
 #'
 #' @param tree Required. Newick string of a phyloseq tree.
 #' @param treetype. Optional. Default \code{"rectangular"}. Can be one of "rectengular", "circular",
-#' "hierarchical",  or "radial".
+#' "hierarchical", "diagonal", or "radial".
 #' @param nodesize Optional. Default \code{30}. Global nodesize.
 #' @param textsize Optional. Default \code{30}. Global textsize.
 #' @param showlabels Optional. Default \code{TRUE}. Whether to show labels.
