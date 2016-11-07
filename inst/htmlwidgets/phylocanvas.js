@@ -19,6 +19,7 @@ HTMLWidgets.widget({
         tree.setNodeSize(x.nodesize);
         tree.setTextSize(x.textsize);
         tree.lineWidth = x.linewidth;
+        tree.showLabels = x.showlabels;
         tree.alignLabels = x.alignlabels;
 
         // loading will draw the tree

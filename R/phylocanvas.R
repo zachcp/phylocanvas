@@ -9,6 +9,7 @@
 #' "hierarchical",  or "radial".
 #' @param nodesize Optional. Default \code{30}. Global nodesize.
 #' @param textsize Optional. Default \code{30}. Global textsize.
+#' @param showlabels Optional. Default \code{TRUE}. Whether to show labels.
 #' @param alignlabels Optional. Default \code{TRUE}. Whether to align node labels
 #' @export
 phylocanvas <- function(tree,
@@ -16,6 +17,7 @@ phylocanvas <- function(tree,
                         nodesize = 30,
                         textsize = 30,
                         linewidth = 3,
+                        showlabels = TRUE,
                         alignlabels= TRUE,
                         width = NULL, height = NULL, elementId = NULL) {
 
@@ -26,6 +28,7 @@ phylocanvas <- function(tree,
     nodesize=nodesize,
     textsize=textsize,
     linewidth=linewidth,
+    showlabels=showlabels,
     alignlabels=alignlabels
   )
 
