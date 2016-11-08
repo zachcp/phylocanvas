@@ -1,5 +1,5 @@
 ---
-title: "Readme"
+title: "Phylocanvas Basics"
 author: "zachcp"
 date: "11/7/2016"
 output: html_document
@@ -11,7 +11,7 @@ library(phylocanvas)
 library(dplyr)
 ```
 
-# phylocanvas: an htmlwidget for the phylocanvas JS library
+# an htmlwidget for phylocanvas JS 
 
 ## Installation
 
@@ -33,7 +33,7 @@ phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "circular", nodesiz
 
 ## Stylize nodes
 
-Node styling options are available. Most of the appearance of a node can be changed here. Note below that colors can be either colornames, rb strings or hex strings.
+Node styling options are available. Most of the appearance of a node can be changed here. Note below that colors can be either colornames, rgb strings or hex strings.
 
 ```{r}
 # Note that colors are names, rgbs or hex
@@ -44,6 +44,16 @@ phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
   style_node("D", fillcolor="#ffa500", highlighted=TRUE) 
 
 ```
+
+## Use Plugins
+
+Phylocanvas has a nubmer of different plugins that extend the basic tree. These include pluings ofr [metadata](https://github.com/phylocanvas/phylocanvas-plugin-metadata), [scale bars](https://github.com/phylocanvas/phylocanvas-plugin-scalebar), [svg export](https://github.com/phylocanvas/phylocanvas-plugin-export-svg), [context menu on the mouse](https://github.com/phylocanvas/phylocanvas-plugin-context-menu), and [history](https://github.com/phylocanvas/phylocanvas-plugin-history). We will try to add as many as reasonable. Currently this htmlwidget sis based on the [phylocanvas-quickstart](https://github.com/phylocanvas/phylocanvas-quickstart) so we can activate the history, context, scale, and metadata features.
+
+```{r}
+# Note the scalebar is active
+phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", showscalebar = TRUE)
+```
+
 
 ## Roadmap
 Not expecting 1:1 parity with the pure JS version. The goal is to expose the basic styling and sizing to allow easy tree drawing within R.  Possibly, to use the metadata plugin for heatmap displays
