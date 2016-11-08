@@ -11,7 +11,7 @@
 #' @param nodesize Optional. Default \code{30}. Global nodesize.
 #' @param textsize Optional. Default \code{30}. Global textsize.
 #' @param showlabels Optional. Default \code{TRUE}. Whether to show labels.
-#' @param alignlabels Optional. Default \code{TRUE}. Whether to align node labels
+#' @param alignlabels Optional. Default \code{FALSE}. Whether to align node labels
 #' @export
 phylocanvas <- function(tree,
                         treetype = "rectangular",
@@ -20,7 +20,7 @@ phylocanvas <- function(tree,
                         textsize = 30,
                         linewidth = 3,
                         showlabels = TRUE,
-                        alignlabels= TRUE,
+                        alignlabels= FALSE,
                         width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
