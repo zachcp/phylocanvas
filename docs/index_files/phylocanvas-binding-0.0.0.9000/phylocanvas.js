@@ -15,7 +15,7 @@ HTMLWidgets.widget({
       renderValue: function(x) {
         //pass params globally
 
-        var tree = Phylocanvas.default.createTree(el);
+        var tree = Phylocanvas.createTree(el, x.config);
 
         //set global variables
         tree.setTreeType(x.treetype);

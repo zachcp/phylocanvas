@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 10px auto;
+      max-width: 60em;
+    }
+    #phylocanvas {
+      width: 100%;
+      height: 30em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Phylocanvas Quickstart</h1>
+  <div id="phylocanvas"></div>
+  <script type="application/javascript"  src="https://cdn.rawgit.com/phylocanvas/phylocanvas-quickstart/v2.3.0/phylocanvas-quickstart.js"></script>
+  <script type="application/javascript">
+    (function (Phylocanvas) {
+      var tree = Phylocanvas.createTree('phylocanvas');
+
+      tree.on('error', function (event) { throw event.error; });
+
+      tree.on('loaded', function () {
+        console.log('loaded');
+      });
+
+      tree.load('(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;');
+    })(window.Phylocanvas);
+  </script>
+</body>
+</html>

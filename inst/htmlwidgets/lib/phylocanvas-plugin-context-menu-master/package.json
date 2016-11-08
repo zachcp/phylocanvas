@@ -1,0 +1,42 @@
+{
+  "name": "phylocanvas-plugin-context-menu",
+  "version": "3.8.0",
+  "description": "Contextual functions for Phylocanvas",
+  "main": "dist/index.min.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --host 0.0.0.0",
+    "build": "NODE_ENV=production webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhyloCanvas/phylocanvas-plugin-context-menu.git"
+  },
+  "keywords": [
+    "phylocanvas",
+    "context menu",
+    "biojs"
+  ],
+  "author": "",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/PhyloCanvas/phylocanvas-plugin-context-menu/issues"
+  },
+  "homepage": "https://github.com/PhyloCanvas/phylocanvas-plugin-context-menu#readme",
+  "devDependencies": {
+    "babel-core": "^6.3.21",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "css-loader": "^0.23.0",
+    "eslint-config-cgps": "github:imperialcollegelondon/eslint-config-cgps",
+    "phylocanvas": "^2.4.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
+  },
+  "files": [
+    "dist",
+    "*.md"
+  ]
+}
