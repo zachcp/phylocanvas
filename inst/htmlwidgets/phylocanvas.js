@@ -1,3 +1,5 @@
+var gparams, tre;
+
 HTMLWidgets.widget({
 
   name: 'phylocanvas',
@@ -11,6 +13,7 @@ HTMLWidgets.widget({
     return {
 
       renderValue: function(x) {
+        //pass params globally
 
         var tree = Phylocanvas.default.createTree(el);
 
@@ -22,11 +25,16 @@ HTMLWidgets.widget({
         tree.showLabels = x.showlabels;
         tree.alignLabels = x.alignlabels;
 
+        gparams = x;
+        tre = tree;
+
         // loading will draw the tree
         tree.load(x.tree);
 
-
-
+        // apply node styles after the tree is loaded
+        for (key in x.nodestyles) {
+          tree.findLeaves(key)[0].setDisplay( x.nodestyles[key] );
+        }
 
       },
 

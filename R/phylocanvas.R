@@ -5,6 +5,7 @@
 #' @import htmlwidgets
 #'
 #' @param tree Required. Newick string of a phyloseq tree.
+#' @param nodestyles. Optional. Default \code{NULL}. Let nodes b stylized.
 #' @param treetype. Optional. Default \code{"rectangular"}. Can be one of "rectengular", "circular",
 #' "hierarchical", "diagonal", or "radial".
 #' @param nodesize Optional. Default \code{30}. Global nodesize.
@@ -14,6 +15,7 @@
 #' @export
 phylocanvas <- function(tree,
                         treetype = "rectangular",
+                        nodestyles = NULL,
                         nodesize = 30,
                         textsize = 30,
                         linewidth = 3,
@@ -29,7 +31,8 @@ phylocanvas <- function(tree,
     textsize=textsize,
     linewidth=linewidth,
     showlabels=showlabels,
-    alignlabels=alignlabels
+    alignlabels=alignlabels,
+    nodestyles=nodestyles
   )
 
   # create widget
