@@ -32,9 +32,11 @@ HTMLWidgets.widget({
         tree.load(x.tree);
 
         // apply node styles after the tree is loaded
-        for (key in x.nodestyles) {
-          tree.findLeaves(key)[0].setDisplay( x.nodestyles[key] );
-        }
+        Object.keys(x.nodestyles).forEach(function(key){
+          var leaf = tree.findLeaves(key)[0];
+          leaf.setDisplay( x.nodestyles[key] );
+          leaf.highlighted = x.nodestyles[key].highlighted;
+        })
 
         // activate all styles
         tree.draw();

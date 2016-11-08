@@ -4,7 +4,7 @@
 #' @param nodeid Required.
 #'
 #' @export
-add_nodestyles <- function(phycnv, nodeid,
+style_node <- function(phycnv, nodeid,
                            highlighted = FALSE,
                            color = "black",
                            shape  = 'circle', #// or square, triangle, star
