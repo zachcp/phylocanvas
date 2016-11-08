@@ -11,6 +11,9 @@
 #' @param nodesize Optional. Default \code{30}. Global nodesize.
 #' @param textsize Optional. Default \code{30}. Global textsize.
 #' @param showlabels Optional. Default \code{TRUE}. Whether to show labels.
+#' @param showhistory Optional. Default \code{FALSE}. Whether to use/show the history plugin.
+#' @param showcontextmenu Optional. Default \code{TRUE}. Whether to use/show the mouse context menu.
+#' @param showscalebar Optional. Default \code{FALSE}. Whether to use/show thescalebar.
 #' @param alignlabels Optional. Default \code{FALSE}. Whether to align node labels
 #' @export
 phylocanvas <- function(tree,
@@ -21,6 +24,9 @@ phylocanvas <- function(tree,
                         linewidth = 3,
                         showlabels = TRUE,
                         alignlabels= FALSE,
+                        showhistory = FALSE,
+                        showcontextmenu=TRUE,
+                        showscalebar=FALSE,
                         width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
@@ -34,10 +40,25 @@ phylocanvas <- function(tree,
     alignlabels=alignlabels,
     nodestyles=nodestyles,
     config = list(
-      history=FALSE,
-      contextMenu=FALSE,
-      scalebar=list(active=FALSE)
+      history=showhistory,
+      contextMenu=TRUE,
+      scalebar=list(
+        active=showscalebar,
+        width=100,
+        height=20,
+        fillStyle='black',
+        strokeStyle='black',
+        lineWidth=1,
+        fontFamily='Sans-serif',
+        fontSize=16,
+        textBaseline='bottom',
+        textAlign='center',
+        digits=2,
+        position=list(
+          bottom=10,
+          left=10)
       )
+    )
   )
 
   # create widget
