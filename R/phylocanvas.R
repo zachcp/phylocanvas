@@ -32,7 +32,12 @@ phylocanvas <- function(tree,
     linewidth=linewidth,
     showlabels=showlabels,
     alignlabels=alignlabels,
-    nodestyles=nodestyles
+    nodestyles=nodestyles,
+    config = list(
+      history=FALSE,
+      contextMenu=FALSE,
+      scalebar=list(active=FALSE)
+      )
   )
 
   # create widget
