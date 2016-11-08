@@ -36,6 +36,9 @@ HTMLWidgets.widget({
           tree.findLeaves(key)[0].setDisplay( x.nodestyles[key] );
         }
 
+        // activate all styles
+        tree.draw();
+
       },
 
       resize: function(width, height) {
