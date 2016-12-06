@@ -40,6 +40,32 @@ HTMLWidgets.widget({
           });
         }
 
+        // apply collapse styles after the tree is loaded
+        if (x.nodecollapses) {
+          Object.keys(x.nodecollapses).forEach(function(key){
+          tree.branches[key].collapsed =  x.nodecollapses[key][0];
+          });
+        }
+
+        // apply rotations
+        if (x.noderotations) {
+          Object.keys(x.noderotations).forEach(function(key){
+          tree.branches[key].rotate();
+          });
+        }
+
+        // select branches
+        if (x.selectbranch) {
+          Object.keys(x.selectbranch).forEach(function(key){
+            if (x.selectbranch[key][0] === false) {
+              tree.branches[key].selected = true;
+            } else {
+              tree.branches[key].selected = true;
+              tree.branches[key].cascadeFlag('selected', true);
+            }
+          });
+        }
+
         // activate all styles
         tree.draw();
 

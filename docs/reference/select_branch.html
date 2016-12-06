@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>phylocanvas — phylocanvas • phylocanvas</title>
+<title>select  branches — select_branch • phylocanvas</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -71,41 +71,23 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>phylocanvas</h1>
+    <h1>select  branches</h1>
     </div>
 
     
-    <p>An html widget wrapper of the <a href = 'phylocanvas.js'>http://phylocanvas.org//</a> JS library.</p>
+    <p>select  branches</p>
     
 
-    <pre><span class='fu'>phylocanvas</span>(<span class='no'>tree</span>, <span class='kw'>treetype</span> <span class='kw'>=</span> <span class='st'>"rectangular"</span>, <span class='kw'>nodestyles</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>nodesize</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>textsize</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>linewidth</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>showlabels</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>alignlabels</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>showhistory</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>showcontextmenu</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>showscalebar</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>elementId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre><span class='fu'>select_branch</span>(<span class='no'>phycnv</span>, <span class='no'>nodeid</span>, <span class='kw'>cascade</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>tree</dt>
-      <dd>Required. Newick string of a phyloseq tree.</dd>
-      <dt>nodesize</dt>
-      <dd>Optional. Default <code>30</code>. Global nodesize.</dd>
-      <dt>textsize</dt>
-      <dd>Optional. Default <code>30</code>. Global textsize.</dd>
-      <dt>showlabels</dt>
-      <dd>Optional. Default <code>TRUE</code>. Whether to show labels.</dd>
-      <dt>alignlabels</dt>
-      <dd>Optional. Default <code>FALSE</code>. Whether to align node labels</dd>
-      <dt>showhistory</dt>
-      <dd>Optional. Default <code>FALSE</code>. Whether to use/show the history plugin.</dd>
-      <dt>showcontextmenu</dt>
-      <dd>Optional. Default <code>TRUE</code>. Whether to use/show the mouse context menu.</dd>
-      <dt>showscalebar</dt>
-      <dd>Optional. Default <code>FALSE</code>. Whether to use/show thescalebar.</dd>
-      <dt>nodestyles.</dt>
-      <dd>Optional. Default <code>NULL</code>. Let nodes b stylized.</dd>
-      <dt>treetype.</dt>
-      <dd>Optional. Default <code>&quot;rectangular&quot;</code>. Can be one of &quot;rectengular&quot;, &quot;circular&quot;,
-&quot;hierarchical&quot;, &quot;diagonal&quot;, or &quot;radial&quot;.</dd>
+      <dt>phycnv</dt>
+      <dd>Required.</dd>
+      <dt>nodeid</dt>
+      <dd>Required.</dd>
+      <dt>cascade</dt>
+      <dd>Optional. Default <code>FALSE</code></dd>
     </dl>
     
 
