@@ -1,7 +1,7 @@
 ---
 title: "Phylocanvas Basics"
 author: "zachcp"
-date: "11/7/2016"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
@@ -44,12 +44,21 @@ phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
   style_node("D", fillcolor="#ffa500", highlighted=TRUE) 
 ```
 
-## Collapse Nodes
+## Collapse Branches
 
 ```{r}
-# Note that colors are names, rgbs or hex
 phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
-  collapse_node("E")
+  collapse_branch("E")
+
+phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "radial") %>%
+  collapse_branch("E")
+```
+
+## Rotate Branches
+
+```{r}
+phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
+  rotate_branch("E")
 
 ```
 

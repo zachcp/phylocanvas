@@ -40,6 +40,7 @@ phylocanvas <- function(tree,
     alignlabels=alignlabels,
     nodestyles=nodestyles,
     nodecollapses = NULL,
+    noderotations = NULL,
     config = list(
       history=showhistory,
       contextMenu=TRUE,

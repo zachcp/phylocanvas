@@ -44,8 +44,13 @@ HTMLWidgets.widget({
         if (x.nodecollapses) {
           Object.keys(x.nodecollapses).forEach(function(key){
           tree.branches[key].collapsed =  x.nodecollapses[key][0];
-          /*leaf.collapsed =  x.nodecollapses[key][0];
-          console.log(x.nodecollapses[key][0])*/
+          });
+        }
+
+        // apply rotations
+        if (x.noderotations) {
+          Object.keys(x.noderotations).forEach(function(key){
+          tree.branches[key].rotate();
           });
         }
 
