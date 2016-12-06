@@ -2,6 +2,7 @@
 # https://github.com/GuangchuangYu/ggtree/blob/master/R/method-fortify.R
 # https://github.com/GuangchuangYu/ggtree/blob/master/R/tree-utilities.R
 
+setOldClass("phylo")
 
 ##' convert phylo to data.frame
 ##'
@@ -14,9 +15,8 @@
 ##' @param ... additional parameter
 ##' @return data.frame
 ##' @method as.data.frame phylo
-##' @author Yu Guangchuang
-as.data.frame.phylo <- function(x, row.names, optional,
-                                layout="rectangular", ...) {
+##' @export
+as.data.frame.phylo <- function(x, row.names, optional, layout="rectangular", ...) {
   if (layout == "unrooted") {
     return(layout.unrooted(x))
   }
@@ -91,7 +91,6 @@ getNodeNum <- function(tr) {
   return(N)
 }
 
-
 getXcoord <- function(tr) {
   edge <- tr$edge
   parent <- edge[,1]
@@ -105,7 +104,6 @@ getXcoord <- function(tr) {
   x <- getXcoord2(x, root, parent, child, len)
   return(x)
 }
-
 
 ##' get the root number
 ##'
@@ -201,8 +199,6 @@ getNodeNum <- function(tr) {
   N <- Ntip + Nnode
   return(N)
 }
-
-
 
 ##' get the root number
 ##'
@@ -432,7 +428,6 @@ getYcoord <- function(tr, step=1) {
   return(y)
 }
 
-
 getYcoord_scale <- function(tr, df, yscale) {
 
   N <- getNodeNum(tr)
@@ -605,7 +600,6 @@ getYcoord_scale_numeric <- function(tr, df, yscale, ...) {
   df[, variable] <- yy
   return(df)
 }
-
 
 getYcoord_scale_category <- function(tr, df, yscale, yscale_mapping=NULL, ...) {
   if (is.null(yscale_mapping)) {

@@ -1,0 +1,50 @@
+---
+title: "Advanced Usage"
+author: "zach charlop-powers"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Advanced Usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressMessages(library(dplyr))
+```
+
+## R Markdown
+
+```{r cars}
+library(dplyr)
+library(ape)
+library(phylocanvas)
+data("bird.families")
+phy1 <- phylocanvas(bird.families)
+phy1
+```
+
+## Modify
+
+Highlight the most recent common ancestor (MRCA).
+
+```{r}
+getNodeName <- function(phy, id) {
+  df  <- as.data.frame(t1)
+  df2 <- df[df$node==id, ]
+  df2$label
+}
+
+t1  <- makeNodeLabel(bird.families)
+n1  <- getMRCA(t1,c("Cerylidae", "Upupidae"))
+d  <- getNodeName(t1, n1)
+
+phylocanvas(t1, width = 700) %>% select_branch(nodeid=d, cascade=T)
+
+```
+```{r}
+phylocanvas(t1, width = 700, treetype = "radial") %>% 
+  select_branch(nodeid=d, cascade=T)
+
+```
