@@ -4,7 +4,7 @@
 #'
 #' @import htmlwidgets
 #'
-#' @param tree Required. Newick string of a phyloseq tree.
+#' @param tree Required. Newick string of a phyloseq tree, \code{\link[ape] phylo} class object, or path to newick-containing file.
 #' @param nodestyles. Optional. Default \code{NULL}. Let nodes b stylized.
 #' @param treetype. Optional. Default \code{"rectangular"}. Can be one of "rectengular", "circular",
 #' "hierarchical", "diagonal", or "radial".
@@ -31,7 +31,7 @@ phylocanvas <- function(tree,
 
   # forward options using x
   x = list(
-    tree=tree,
+    tree=as.tree(tree),
     treetype=treetype,
     nodesize=nodesize,
     textsize=textsize,
