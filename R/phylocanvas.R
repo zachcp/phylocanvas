@@ -13,7 +13,7 @@
 #' @param showlabels Optional. Default \code{TRUE}. Whether to show labels.
 #' @param showhistory Optional. Default \code{FALSE}. Whether to use/show the history plugin.
 #' @param showcontextmenu Optional. Default \code{TRUE}. Whether to use/show the mouse context menu.
-#' @param showscalebar Optional. Default \code{FALSE}. Whether to use/show thescalebar.
+#' @param showscalebar Optional. Default \code{FALSE}. Whether to use/show the scalebar.
 #' @param alignlabels Optional. Default \code{FALSE}. Whether to align node labels
 #' @export
 phylocanvas <- function(tree,
