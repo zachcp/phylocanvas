@@ -7,8 +7,6 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(phylocanvas)
-library(dplyr)
 ```
 
 # an htmlwidget for phylocanvas JS 
@@ -23,7 +21,9 @@ devtools::install_github("zachcp/phylocanvas")
 
 Use phylocanvas to draw phylogenetic trees. Basic options to control the tree are availalbe in this top level function. The tree shape in controlled by the `treetype` option. Try 'radial' and 'heirarchical' as well.
 
-```{r}
+```{r, message=FALSE}
+library(phylocanvas)
+library(dplyr)
 phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "rectangular", alignlabels = T)
 ```
 
@@ -42,8 +42,17 @@ phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
   style_node("B", fillcolor = "blue") %>%
   style_node("C", labeltextsize = 10, shape="triangle") %>%
   style_node("D", fillcolor="#ffa500", highlighted=TRUE) 
+```
+
+## Collapse Nodes
+
+```{r}
+# Note that colors are names, rgbs or hex
+phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
+  collapse_node("E")
 
 ```
+
 
 ## Use Plugins
 

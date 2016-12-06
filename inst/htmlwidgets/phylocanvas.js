@@ -40,6 +40,16 @@ HTMLWidgets.widget({
           });
         }
 
+        // apply collapse styles after the tree is loaded
+        if (x.nodecollapses) {
+          Object.keys(x.nodecollapses).forEach(function(key){
+          tree.branches[key].collapsed =  x.nodecollapses[key][0];
+          /*leaf.collapsed =  x.nodecollapses[key][0];
+          console.log(x.nodecollapses[key][0])*/
+          });
+        }
+
+
         // activate all styles
         tree.draw();
 
