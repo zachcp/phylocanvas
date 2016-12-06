@@ -1,6 +1,6 @@
 Package: phylocanvas
 Title: Interactive phylogenetic trees using phylocanvas
-Version: 0.0.0.9000
+Version: 0.0.0.91
 Authors@R: person("zachary", "charlop-powers", email = "zach.charlop.powers@gmail.com", role = c("aut", "cre"))
 Description: A package to allow use of the phylocanvas JS library from R.
 URL: https://github.com/zachcp/phylocanvas
