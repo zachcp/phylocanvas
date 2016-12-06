@@ -41,6 +41,7 @@ phylocanvas <- function(tree,
     nodestyles=nodestyles,
     nodecollapses = NULL,
     noderotations = NULL,
+    selectbranch = NULL,
     config = list(
       history=showhistory,
       contextMenu=TRUE,

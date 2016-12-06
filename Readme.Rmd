@@ -24,11 +24,13 @@ Use phylocanvas to draw phylogenetic trees. Basic options to control the tree ar
 ```{r, message=FALSE}
 library(phylocanvas)
 library(dplyr)
-phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "rectangular", alignlabels = T)
+
+phycanv <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "rectangular", alignlabels = T)
 ```
 
 ```{r}
-phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "circular", nodesize = 30, linewidth = 10)
+phycircle <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "circular", nodesize = 30, linewidth = 10)
+phycircle
 ```
 
 ## Stylize nodes
@@ -37,7 +39,7 @@ Node styling options are available. Most of the appearance of a node can be chan
 
 ```{r}
 # Note that colors are names, rgbs or hex
-phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
+phycanv %>%
   style_node("A", nodesizeratio = 4, fillcolor="rgb(0, 255, 0)") %>% 
   style_node("B", fillcolor = "blue") %>%
   style_node("C", labeltextsize = 10, shape="triangle") %>%
@@ -47,18 +49,22 @@ phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
 ## Collapse Branches
 
 ```{r}
-phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
-  collapse_branch("E")
-
-phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "radial") %>%
-  collapse_branch("E")
+phycircle %>% collapse_branch("E")
 ```
 
 ## Rotate Branches
 
 ```{r}
-phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;") %>%
-  rotate_branch("E")
+phycircle %>% rotate_branch("E")
+```
+
+
+## Select Branches
+
+```{r}
+phycanv %>% select_branch("B")
+
+phycanv %>% select_branch("E", cascade=TRUE)
 
 ```
 

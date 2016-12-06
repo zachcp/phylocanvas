@@ -54,6 +54,17 @@ HTMLWidgets.widget({
           });
         }
 
+        // select branches
+        if (x.selectbranch) {
+          Object.keys(x.selectbranch).forEach(function(key){
+            if (x.selectbranch[key][0] === false) {
+              tree.branches[key].selected = true;
+            } else {
+              tree.branches[key].selected = true;
+              tree.branches[key].cascadeFlag('selected', true);
+            }
+          });
+        }
 
         // activate all styles
         tree.draw();
