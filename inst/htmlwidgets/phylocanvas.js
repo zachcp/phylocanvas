@@ -66,6 +66,21 @@ HTMLWidgets.widget({
           });
         }
 
+        // prune branches
+        if (x.prunebranch) {
+          Object.keys(x.prunebranch).forEach(function(key){
+              tree.branches[key].pruned = true;
+          });
+        }
+
+        // highlight nodes
+        if (x.nodehighlights) {
+          Object.keys(x.nodehighlights).forEach(function(key){
+            var leaf = tree.findLeaves(key)[0];
+            leaf.highlighted=true;
+          });
+        }
+
         // activate all styles
         tree.draw();
 

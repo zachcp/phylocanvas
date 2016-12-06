@@ -68,6 +68,13 @@ phycanv %>% select_branch("E", cascade=TRUE)
 
 ```
 
+## Highlight Nodes
+
+```{r}
+phycanv %>% highlight_node("B")
+
+```
+
 
 ## Use Plugins
 
