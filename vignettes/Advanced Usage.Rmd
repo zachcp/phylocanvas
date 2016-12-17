@@ -11,13 +11,12 @@ vignette: >
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-suppressMessages(library(dplyr))
+suppressMessages(library(magrittr))
 ```
 
-## R Markdown
+## Base Tree
 
 ```{r cars}
-library(dplyr)
 library(ape)
 library(phylocanvas)
 data("bird.families")
@@ -25,26 +24,49 @@ phy1 <- phylocanvas(bird.families)
 phy1
 ```
 
-## Modify
+## Most Recent Common Ancestor
 
 Highlight the most recent common ancestor (MRCA).
 
 ```{r}
-getNodeName <- function(phy, id) {
-  df  <- as.data.frame(t1)
-  df2 <- df[df$node==id, ]
-  df2$label
-}
 
+# add internal nodenames
 t1  <- makeNodeLabel(bird.families)
+# get MRCA
 n1  <- getMRCA(t1,c("Cerylidae", "Upupidae"))
-d  <- getNodeName(t1, n1)
-
+# get the node name
+d   <- getNodeName(t1, n1)
+# highlight all submembers of the MRCA
 phylocanvas(t1, width = 700) %>% select_branch(nodeid=d, cascade=T)
 
 ```
 ```{r}
 phylocanvas(t1, width = 700, treetype = "radial") %>% 
   select_branch(nodeid=d, cascade=T)
+
+```
+
+## Multiple MRCA 
+
+To highlight multiple clades, you can identify clades by node nubmer, in this case by MRCA. Then you can stylize the descendant nodes.
+
+```{r}
+phycanv     <- phylocanvas(t1, width = 700, treetype = "radial") 
+nodenames   <- getDescendantNames(t1, n1)
+clade2names <- getDescendantNames(t1, getMRCA(t1, c("Pteroclidae", "Jacanidae")))
+clade3names <- getDescendantNames(t1, getMRCA(t1, c("Irenidae", "Paramythiidae")))
+
+for (nodename in nodenames) {
+  phycanv <- style_node(phycanv, nodeid = nodename, fillcolor="green")
+}
+for (nodename in clade2names) {
+  phycanv <- style_node(phycanv, nodeid = nodename, fillcolor="red")
+}
+for (nodename in clade3names) {
+  phycanv <- style_node(phycanv, nodeid = nodename, fillcolor="blue")
+}
+
+phycanv
+
 
 ```

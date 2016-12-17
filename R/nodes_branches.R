@@ -97,5 +97,3 @@ style_node <- function(phycnv, nodeid,
   phycnv$x$nodestyles[[nodeid]] <- nodestyles
   phycnv
 }
-
-
