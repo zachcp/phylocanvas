@@ -1,10 +1,10 @@
 ---
-title: "Advanced Usage"
+title: "Advanced Use of Phylocanvas"
 author: "zach charlop-powers"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Advanced Usage}
+  %\VignetteIndexEntry{Advanced Use}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
