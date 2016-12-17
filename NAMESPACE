@@ -3,6 +3,7 @@
 S3method(as.data.frame,phylo)
 export(as.tree)
 export(collapse_branch)
+export(getNodeName)
 export(highlight_node)
 export(phylocanvas)
 export(phylocanvasOutput)

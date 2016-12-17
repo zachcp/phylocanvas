@@ -1,3 +1,7 @@
+# Unless explicity noted, everythign in this file is copied from ggtree.
+# I've copied instread of depending simply to avoid the large nubmer of dependencies
+# of the ggtree package. This keep phylocanvas light.
+#
 # Taken from ggtree:
 # https://github.com/GuangchuangYu/ggtree/blob/master/R/method-fortify.R
 # https://github.com/GuangchuangYu/ggtree/blob/master/R/tree-utilities.R
