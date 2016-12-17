@@ -2,14 +2,21 @@
 title: "Phylocanvas Basics"
 author: "zachcp"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  md_document:
+    variant: markdown_github
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # an htmlwidget for phylocanvas JS 
+
+## Latest Information
+
+See the [documentation webpage](https://zachcp.github.io/phylocanvas/) fot the latest information.
 
 ## Installation
 
@@ -21,70 +28,20 @@ devtools::install_github("zachcp/phylocanvas")
 
 Use phylocanvas to draw phylogenetic trees. Basic options to control the tree are availalbe in this top level function. The tree shape in controlled by the `treetype` option. Try 'radial' and 'heirarchical' as well.
 
-```{r, message=FALSE}
+```{r, eval=FALSE}
 library(phylocanvas)
 library(dplyr)
 
 phycanv <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "rectangular", alignlabels = T)
-```
 
-```{r}
-phycircle <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "circular", nodesize = 30, linewidth = 10)
-phycircle
-```
 
-## Stylize nodes
-
-Node styling options are available. Most of the appearance of a node can be changed here. Note below that colors can be either colornames, rgb strings or hex strings.
-
-```{r}
-# Note that colors are names, rgbs or hex
+# stylize nodes
 phycanv %>%
   style_node("A", nodesizeratio = 4, fillcolor="rgb(0, 255, 0)") %>% 
   style_node("B", fillcolor = "blue") %>%
   style_node("C", labeltextsize = 10, shape="triangle") %>%
   style_node("D", fillcolor="#ffa500", highlighted=TRUE) 
 ```
-
-## Collapse Branches
-
-```{r}
-phycircle %>% collapse_branch("E")
-```
-
-## Rotate Branches
-
-```{r}
-phycircle %>% rotate_branch("E")
-```
-
-
-## Select Branches
-
-```{r}
-phycanv %>% select_branch("B")
-
-phycanv %>% select_branch("E", cascade=TRUE)
-
-```
-
-## Highlight Nodes
-
-```{r}
-phycanv %>% highlight_node("B")
-
-```
-
-
-## Use Plugins
-
-Phylocanvas has a nubmer of different plugins that extend the basic tree. These include pluings ofr [metadata](https://github.com/phylocanvas/phylocanvas-plugin-metadata), [scale bars](https://github.com/phylocanvas/phylocanvas-plugin-scalebar), [svg export](https://github.com/phylocanvas/phylocanvas-plugin-export-svg), [context menu on the mouse](https://github.com/phylocanvas/phylocanvas-plugin-context-menu), and [history](https://github.com/phylocanvas/phylocanvas-plugin-history). We will try to add as many as reasonable. Currently this htmlwidget sis based on the [phylocanvas-quickstart](https://github.com/phylocanvas/phylocanvas-quickstart) so we can activate the history, context, scale, and metadata features.
-
-```{r}
-# Note the scalebar is active
-phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", showscalebar = TRUE)
-```
-
 
 ## Roadmap
 Not expecting 1:1 parity with the pure JS version. The goal is to expose the basic styling and sizing to allow easy tree drawing within R.  Possibly, to use the metadata plugin for heatmap displays
