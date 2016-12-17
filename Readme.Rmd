@@ -1,34 +1,24 @@
----
-title: "Phylocanvas Basics"
-author: "zachcp"
-date: "`r Sys.Date()`"
-output:
-  md_document:
-    variant: markdown_github
----
+an htmlwidget for phylocanvas JS
+================================
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-# an htmlwidget for phylocanvas JS 
-
-## Latest Information
+Latest Information
+------------------
 
 See the [documentation webpage](https://zachcp.github.io/phylocanvas/) fot the latest information.
 
-## Installation
+Installation
+------------
 
-```{r, eval=FALSE}
+``` r
 devtools::install_github("zachcp/phylocanvas")
 ```
 
-## Basic Usage
+Basic Usage
+-----------
 
 Use phylocanvas to draw phylogenetic trees. Basic options to control the tree are availalbe in this top level function. The tree shape in controlled by the `treetype` option. Try 'radial' and 'heirarchical' as well.
 
-```{r, eval=FALSE}
+``` r
 library(phylocanvas)
 library(dplyr)
 
@@ -43,11 +33,12 @@ phycanv %>%
   style_node("D", fillcolor="#ffa500", highlighted=TRUE) 
 ```
 
-## Roadmap
-Not expecting 1:1 parity with the pure JS version. The goal is to expose the basic styling and sizing to allow easy tree drawing within R.  Possibly, to use the metadata plugin for heatmap displays
-and ideally (don't know how hard this will be) allow drag and drop selection for returnign sequence 
-names into shiny.
+Roadmap
+-------
 
-## Reference
+Not expecting 1:1 parity with the pure JS version. The goal is to expose the basic styling and sizing to allow easy tree drawing within R. Possibly, to use the metadata plugin for heatmap displays and ideally (don't know how hard this will be) allow drag and drop selection for returnign sequence names into shiny.
+
+Reference
+---------
+
 The sourcecode for the phylocanvas htmltools package can be found at the [github repo](https://github.com/zachcp/phylocanvas). For more information about the phylocanvas JavaScript library, check out the [phylocanvas website](http://phylocanvas.org).
-
