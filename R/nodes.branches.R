@@ -1,6 +1,6 @@
 #' collapse branch
 #'
-#' given a \code{\link[phylocanvas] phylocanvas} object and an id node,
+#' given a \code{\link[phylocanvas]{phylocanvas}} object and an id node,
 #' collapse the node.
 #'
 #'
@@ -16,7 +16,7 @@ collapse_branch <- function(phycnv, nodeid, collapse = TRUE) {
 }
 #' prune branch
 #'
-#' given a \code{\link[phylocanvas] phylocanvas} object and an nodeid for
+#' given a \code{\link[phylocanvas]{phylocanvas}} object and an nodeid for
 #' an internal node, prune the branch.
 #'
 #' @param phycnv Required.
@@ -30,7 +30,7 @@ prune_branch <- function(phycnv, nodeid) {
 }
 #' rotate a branch
 #'
-#' given a \code{\link[phylocanvas] phylocanvas} object and an nodeid for
+#' given a \code{\link[phylocanvas]{phylocanvas}} object and an nodeid for
 #' an internal node, rotate the branch defined by the node
 #'
 #' @param phycnv Required.
@@ -44,7 +44,7 @@ rotate_branch <- function(phycnv, nodeid) {
 }
 #' select  branch
 #'
-#' given a \code{\link[phylocanvas] phylocanvas} object and an nodeid for
+#' given a \code{\link[phylocanvas]{phylocanvas}} object and an nodeid for
 #' an internal node, select the branch defined by the node
 #'
 #' @param phycnv Required.
@@ -60,7 +60,7 @@ select_branch <- function(phycnv, nodeid, cascade=FALSE) {
 
 #' highlight node
 #'
-#' given a \code{\link[phylocanvas] phylocanvas} object and an nodeid,
+#' given a \code{\link[phylocanvas]{phylocanvas}} object and an nodeid,
 #' highlight the node.
 #'
 #' @param phycnv Required.
@@ -77,7 +77,7 @@ highlight_node <- function(phycnv, nodeid) {
 #'
 #' add styles to a node
 #'
-#' given a \code{\link[phylocanvas] phylocanvas} object and nodeid, apply
+#' given a \code{\link[phylocanvas]{phylocanvas}} object and nodeid, apply
 #' the given styles to that node.
 #'
 #'
