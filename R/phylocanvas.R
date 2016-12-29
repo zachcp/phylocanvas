@@ -4,17 +4,23 @@
 #'
 #' @import htmlwidgets
 #'
-#' @param tree Required. Newick string of a phyloseq tree, \code{\link[ape] phylo} class object, or path to newick-containing file.
-#' @param nodestyles. Optional. Default \code{NULL}. Let nodes b stylized.
-#' @param treetype. Optional. Default \code{"rectangular"}. Can be one of "rectengular", "circular",
+#' @param tree Required. Newick string of a phyloseq tree, \code{\link[ape]{phylo}} class object,
+#' \code{\link[phylobase]{phylo4}} class object,, or path to newick-containing file.
+#' @param nodestyles Optional. Default \code{NULL}. Let nodes b stylized.
+#' @param treetype Optional. Default \code{"rectangular"}. Can be one of "rectengular", "circular",
 #' "hierarchical", "diagonal", or "radial".
 #' @param nodesize Optional. Default \code{30}. Global nodesize.
 #' @param textsize Optional. Default \code{30}. Global textsize.
+#' @param linewidth Optional. Default \code{3}. Global linewidth.
 #' @param showlabels Optional. Default \code{TRUE}. Whether to show labels.
 #' @param showhistory Optional. Default \code{FALSE}. Whether to use/show the history plugin.
 #' @param showcontextmenu Optional. Default \code{TRUE}. Whether to use/show the mouse context menu.
 #' @param showscalebar Optional. Default \code{FALSE}. Whether to use/show the scalebar.
 #' @param alignlabels Optional. Default \code{FALSE}. Whether to align node labels
+#' @param width Optional. Default \code{NULL}. HTMLWidget width
+#' @param height Optional. Default \code{NULL}. HTMLWidget width
+#' @param elementId Optional. Default \code{NULL}. HTMLWidget ID
+
 #' @export
 phylocanvas <- function(tree,
                         treetype = "rectangular",
@@ -31,7 +37,7 @@ phylocanvas <- function(tree,
 
   # forward options using x
   x = list(
-    tree=as.tree(tree),
+    tree=as_tree(tree),
     treetype=treetype,
     nodesize=nodesize,
     textsize=textsize,

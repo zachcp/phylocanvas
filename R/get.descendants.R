@@ -1,9 +1,9 @@
 #' get descendants
 #'
-#' get the names of the tips of descendantds given a tree
+#' get the names of the tips of descendants given a tree
 #' and the name of an internal node.
 #'
-#' @param tree Required. A \code{\link[phlobase] phloy4} object.
+#' @param tree Required. A \code{\link[phylobase]{phylo4}} object.
 #' @param nodename Required. A character corresponding to an internal node.
 #'
 #' @return a character vector of descendant names

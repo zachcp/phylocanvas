@@ -1,6 +1,6 @@
 Package: phylocanvas
 Title: Interactive phylogenetic trees using phylocanvas
-Version: 0.0.0.92
+Version: 0.0.0.93
 Authors@R: person("zachary", "charlop-powers", email = "zach.charlop.powers@gmail.com", role = c("aut", "cre"))
 Description: A package to allow use of the phylocanvas JS library from R.
 URL: https://github.com/zachcp/phylocanvas
@@ -8,17 +8,22 @@ BugReports: https://github.com/zachcp/phylocanvas/issues
 Depends:
     R (>= 3.3.1)
 Imports:
-  ape (>= 4.0),
-  phylobase,
-  htmlwidgets,
-  magrittr,
-  methods (>= 3.3.0)
+    ape (>= 4.0),
+    phylobase,
+    htmlwidgets,
+    magrittr,
+    methods (>= 3.3.0)
 Suggests:
-  knitr,
-  rmarkdown,
-  dplyr
-License: MIT
+    knitr,
+    rmarkdown
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr
+Collate:
+    'load.tree.R'
+    'as.tree.R'
+    'get.descendants.R'
+    'nodes.branches.R'
+    'phylocanvas.R'

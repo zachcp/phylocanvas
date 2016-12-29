@@ -92,8 +92,8 @@ highlight_node <- function(phycnv, nodeid) {
 #' @param linewidth Optional. Default \code{1}.
 #' @param labelcolor Optional. Default \code{"black"}. Label color. Colors are strings in the format of names, rgb strings or hex values.
 #' @param labeltextsize Optional.Default \code{20}. Label size.
-#' @param linefont Optional. Default \code{"Arial"}. Label font.
-#' @param lineformat Optional. Default \code{"bold"}. Label format.
+#' @param labelfont Optional. Default \code{"Arial"}. Label font.
+#' @param labelformat Optional. Default \code{"bold"}. Label format.
 #'
 #' @seealso \url{http://phylocanvas.org/docs/features/#style-branches-individually}
 #' @export
@@ -105,7 +105,7 @@ style_node <- function(phycnv, nodeid,
                        strokecolor= "black",
                        fillcolor ='black',
                        linewidth = 1,
-                       labelcolour='black',
+                       labelcolor='black',
                        labeltextsize=20, #// points
                        labelfont ='Arial',
                        labelformat = 'bold'
@@ -121,7 +121,7 @@ style_node <- function(phycnv, nodeid,
       lineWidth = linewidth
     ),
     labelStyle = list(
-      colour=labelcolour,
+      colour=labelcolor,
       textSize=labeltextsize,
       font =labelfont,
       format = labelformat
