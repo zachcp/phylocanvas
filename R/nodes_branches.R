@@ -14,7 +14,7 @@ collapse_branch <- function(phycnv, nodeid, collapse = TRUE) {
 #' @param nodeid Required.
 #' @export
 prune_branch <- function(phycnv, nodeid) {
-  phycnv$x$prunebranch[[nodeid]] <- list(true)
+  phycnv$x$prunebranch[[nodeid]] <- list(TRUE)
   phycnv
 }
 #' rotate a branch
