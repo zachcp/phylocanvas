@@ -1,17 +1,28 @@
-#' collapse a branch
+#' collapse branch
+#'
+#' given a \code{\link[phylocanvas] phylocanvas} object and an id node,
+#' collapse the node.
+#'
 #'
 #' @param phycnv Required.
 #' @param nodeid Required.
 #' @param collapse Optional. Default \code{TRUE}.  Whether to collapse the node.
+#'
+#' @seealso \url{http://phylocanvas.org/docs/features/#collapse-branches}
 #' @export
 collapse_branch <- function(phycnv, nodeid, collapse = TRUE) {
   phycnv$x$nodecollapses[[nodeid]] <- list(collapse)
   phycnv
 }
-#' prune  branch
+#' prune branch
+#'
+#' given a \code{\link[phylocanvas] phylocanvas} object and an nodeid for
+#' an internal node, prune the branch.
 #'
 #' @param phycnv Required.
 #' @param nodeid Required.
+#'
+#' @seealso  \url{http://phylocanvas.org/docs/features/#prune-branches}
 #' @export
 prune_branch <- function(phycnv, nodeid) {
   phycnv$x$prunebranch[[nodeid]] <- list(TRUE)
@@ -19,18 +30,28 @@ prune_branch <- function(phycnv, nodeid) {
 }
 #' rotate a branch
 #'
+#' given a \code{\link[phylocanvas] phylocanvas} object and an nodeid for
+#' an internal node, rotate the branch defined by the node
+#'
 #' @param phycnv Required.
 #' @param nodeid Required.
+#'
+#' @seealso \url{http://phylocanvas.org/docs/features/#rotate-branches}
 #' @export
 rotate_branch <- function(phycnv, nodeid) {
   phycnv$x$noderotations[[nodeid]] <- list(TRUE)
   phycnv
 }
-#' select  branches
+#' select  branch
+#'
+#' given a \code{\link[phylocanvas] phylocanvas} object and an nodeid for
+#' an internal node, select the branch defined by the node
 #'
 #' @param phycnv Required.
 #' @param nodeid Required.
 #' @param cascade Optional. Default \code{FALSE}
+#'
+#' @seealso \url{http://phylocanvas.org/docs/features/#select-branches}
 #' @export
 select_branch <- function(phycnv, nodeid, cascade=FALSE) {
   phycnv$x$selectbranch[[nodeid]] <- list(cascade)
@@ -39,15 +60,26 @@ select_branch <- function(phycnv, nodeid, cascade=FALSE) {
 
 #' highlight node
 #'
+#' given a \code{\link[phylocanvas] phylocanvas} object and an nodeid,
+#' highlight the node.
+#'
 #' @param phycnv Required.
 #' @param nodeid Required.
+#'
+#' @seealso \url{http://phylocanvas.org/docs/features/#highlight-leaves}
 #' @export
 highlight_node <- function(phycnv, nodeid) {
   phycnv$x$nodehighlights[[nodeid]] <- list(TRUE)
   phycnv
 }
 
+#' style node
+#'
 #' add styles to a node
+#'
+#' given a \code{\link[phylocanvas] phylocanvas} object and nodeid, apply
+#' the given styles to that node.
+#'
 #'
 #' @param phycnv Required.
 #' @param nodeid Required.
@@ -62,6 +94,8 @@ highlight_node <- function(phycnv, nodeid) {
 #' @param labeltextsize Optional.Default \code{20}. Label size.
 #' @param linefont Optional. Default \code{"Arial"}. Label font.
 #' @param lineformat Optional. Default \code{"bold"}. Label format.
+#'
+#' @seealso \url{http://phylocanvas.org/docs/features/#style-branches-individually}
 #' @export
 style_node <- function(phycnv, nodeid,
                        highlighted = FALSE,

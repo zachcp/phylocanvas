@@ -4,6 +4,7 @@
 #'
 #' @importFrom ape write.tree
 #' @importFrom ape read.tree
+#' @importFrom methods as
 #' @export
 #'
 setGeneric("as.tree", function(phy, id) {standardGeneric("as.tree")})

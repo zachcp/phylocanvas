@@ -16,6 +16,7 @@
 #'
 #' @importFrom ape read.tree
 #' @importFrom ape makeNodeLabel
+#' @importFrom methods as
 #' @importClassesFrom phylobase phylo4
 #' @export
 #' @examples
