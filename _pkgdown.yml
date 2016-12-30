@@ -1,0 +1,7 @@
+articles:
+  - title: "Use of the Phylocanvas Package"
+    desc: >
+      The phylocanvas package.
+    contents:
+    - Phylocanvas_Basic
+    - Phylocanvas_Advanced
