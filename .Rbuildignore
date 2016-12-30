@@ -6,3 +6,4 @@ docs/
 _pkgdown.yml
 vignettes/Phylocanvas_Advanced*
 vignettes/Phylocanvas_Basic*
+^cran-comments\.md$
