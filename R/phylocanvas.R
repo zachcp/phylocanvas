@@ -1,6 +1,6 @@
 #' phylocanvas
 #'
-#' An html widget wrapper of the \href{http://phylocanvas.org//}{phylocanvas.js} JS library.
+#' An html widget wrapper of the \href{http://phylocanvas.org}{phylocanvas.js} JS library.
 #'
 #' @import htmlwidgets
 #'

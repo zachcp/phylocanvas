@@ -1,5 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.eslintrc$
-Readme.Rmd
+README.Rmd
 docs/
+_pkgdown.yml
+vignettes/Phylocanvas_Advanced*
+vignettes/Phylocanvas_Basic*
