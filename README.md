@@ -1,6 +1,8 @@
 an htmlwidget for phylocanvas JS
 ================================
 
+[![Travis Build Status](https://travis-ci.org/zachcp/phylocanvas.svg?branch=master)](https://travis-ci.org/zachcp/phylocanvas) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/phylocanvas)](https://cran.r-project.org/package=phylocanvas)
+
 Latest Information
 ------------------
 
