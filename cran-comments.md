@@ -1,9 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-*  Changed the descriptiono to be more informative. It now reads: Create interactive phylogenetic trees using the phylocanvas JS library.
-
-* Added a link the the upstream library, http://phylocanvas.org/
+*  Updated the  the title and description to incldue single quoteing of names and the <http://phylocanvas.org/> reference to the description. I've also expanded the description to make it more informative.
 
 ## Test environments
 * local OS X install, R 3.3.2
