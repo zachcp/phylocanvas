@@ -1,7 +1,6 @@
 an htmlwidget for phylocanvas JS
 ================================
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/phylocanvas)](https://cran.r-project.org/package=phylocanvas)
 
 Latest Information
 ------------------
