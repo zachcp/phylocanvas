@@ -15,6 +15,10 @@ HTMLWidgets.widget({
       renderValue: function(x) {
         //pass params globally
 
+        // clear the sub nodes. Necessary for shiny apps
+        while (el.firstChild)
+          el.removeChild(el.firstChild);
+
         var tree = Phylocanvas.createTree(el, x.config);
 
         //set global variables
