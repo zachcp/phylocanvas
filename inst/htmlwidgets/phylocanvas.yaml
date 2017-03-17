@@ -1,14 +1,5 @@
 dependencies:
- - name: phylocanvas
-   version: 2.7.2
-   src: htmlwidgets/lib/phylocanvas
-   #script: phylocanvas.min.js
- - name: phylocanvas-plugin-context-menu-master
-   version: 3.8.0
-   src: htmlwidgets/lib/phylocanvas-plugin-context-menu-master
-   #script: dist/index.min.js
-   stylesheet: src/style.css
  - name: phylocanvas-quickstart
-   version: 2.7.2
+   version: 2.8.1
    src: htmlwidgets/lib/phylocanvas-quickstart-master
    script: phylocanvas-quickstart.js
