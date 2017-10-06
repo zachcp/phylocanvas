@@ -16,33 +16,42 @@ suppressMessages(library(magrittr))
 
 ## Base Tree
 
-```{r cars}
+```{r warning=FALSE}
 library(ape)
 library(phylocanvas)
+
 data("bird.families")
-phy1 <- phylocanvas(bird.families)
-phy1
+phylocanvas(bird.families, treetype = "radial", 
+            width = 700, textsize = 10, nodesize = 10)
 ```
 
 ## Most Recent Common Ancestor
 
 Highlight the most recent common ancestor (MRCA).
 
-```{r}
+```{r warning=FALSE}
 
 # add internal nodenames
-t1  <- makeNodeLabel(bird.families)
-# get MRCA
-n1  <- getMRCA(t1,c("Cerylidae", "Upupidae"))
-# get the node name
-d   <- getNodeName(t1, n1)
-# highlight all submembers of the MRCA
-phylocanvas(t1, width = 700) %>% select_branch(nodeid=d, cascade=T)
+birds  <- makeNodeLabel(bird.families)
 
+# convert to phylo4 which has a few nice convenicnece methods including the
+# ability to get names with nodes.
+birds <- phylobase::phylo4(birds)
+
+# get MRCA
+node  <- phylobase::MRCA(birds,c("Cerylidae", "Upupidae"))
+
+# get the node name
+nodename <- names(node)
+
+# highlight all submembers of the MRCA
+phylocanvas(birds, width = 700, textsize = 10, nodesize = 10) %>%
+  select_branch(nodeid=nodename, cascade=T)
 ```
-```{r}
-phylocanvas(t1, width = 700, treetype = "radial") %>% 
-  select_branch(nodeid=d, cascade=T)
+
+```{r, warning=FALSE}
+phylocanvas(birds, width = 700, textsize = 10, nodesize = 10, treetype = "radial") %>% 
+  select_branch(nodeid=nodename, cascade=T)
 
 ```
 
@@ -50,11 +59,10 @@ phylocanvas(t1, width = 700, treetype = "radial") %>%
 
 To highlight multiple clades, you can identify clades by node nubmer, in this case by MRCA. Then you can stylize the descendant nodes.
 
-```{r}
-phycanv     <- phylocanvas(t1, width = 700, treetype = "radial") 
-nodenames   <- getDescendantNames(t1, n1)
-clade2names <- getDescendantNames(t1, getMRCA(t1, c("Pteroclidae", "Jacanidae")))
-clade3names <- getDescendantNames(t1, getMRCA(t1, c("Irenidae", "Paramythiidae")))
+```{r warning=FALSE}
+phycanv     <- phylocanvas(birds, width = 700, textsize = 10, nodesize = 10, treetype = "radial") 
+nodenames   <- get.descendants(birds, nodename)
+clade2names <- get.descendants(birds, phylobase::MRCA(birds, c("Pteroclidae", "Jacanidae")))
 
 for (nodename in nodenames) {
   phycanv <- style_node(phycanv, nodeid = nodename, fillcolor="green")
@@ -62,9 +70,7 @@ for (nodename in nodenames) {
 for (nodename in clade2names) {
   phycanv <- style_node(phycanv, nodeid = nodename, fillcolor="red")
 }
-for (nodename in clade3names) {
-  phycanv <- style_node(phycanv, nodeid = nodename, fillcolor="blue")
-}
+
 
 phycanv
 
