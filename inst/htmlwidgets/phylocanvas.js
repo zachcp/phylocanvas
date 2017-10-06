@@ -24,7 +24,6 @@ HTMLWidgets.widget({
         //set global variables
         tree.setTreeType(x.treetype);
         tree.setNodeSize(x.nodesize);
-        tree.setTextSize(x.textsize);
         tree.lineWidth = x.linewidth;
         tree.showLabels = x.showlabels;
         tree.alignLabels = x.alignlabels;
@@ -34,9 +33,11 @@ HTMLWidgets.widget({
 
         // loading will draw the tree
         tree.load(x.tree);
+        
+        tree.setTextSize(x.textsize);
 
         // apply node styles after the tree is loaded
-        if (x.nodestyles) {
+        if (x.nodestyles !== null) {
           Object.keys(x.nodestyles).forEach(function(key){
           var leaf = tree.findLeaves(key)[0];
           leaf.setDisplay( x.nodestyles[key] );
