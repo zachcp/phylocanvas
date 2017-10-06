@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>rotate a branch — rotate_branch • phylocanvas</title>
+<title>as_tree — as_tree • phylocanvas</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -98,32 +98,31 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>rotate a branch</h1>
+    <h1>as_tree</h1>
     </div>
 
     
-    <p>given a <code><a href='phylocanvas.html'>phylocanvas</a></code> object and an nodeid for
-an internal node, rotate the branch defined by the node</p>
+    <p>Convert objects to newick strings</p>
     
 
-    <pre class="usage"><span class='fu'>rotate_branch</span>(<span class='no'>phycnv</span>, <span class='no'>nodeid</span>)</pre>
+    <pre class="usage"><span class='fu'>as_tree</span>(<span class='no'>phy</span>)
+
+<span class='co'># S4 method for phylo</span>
+<span class='fu'>as_tree</span>(<span class='no'>phy</span>)
+
+<span class='co'># S4 method for phylo4</span>
+<span class='fu'>as_tree</span>(<span class='no'>phy</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>phycnv</th>
-      <td><p>Required.</p></td>
-    </tr>
-    <tr>
-      <th>nodeid</th>
-      <td><p>Required.</p></td>
+      <th>phy</th>
+      <td><p>Required. phy is either a <code><a href='http://www.rdocumentation.org/packages/ape/topics/read.tree'>phylo</a></code> class object,
+<code><a href='http://www.rdocumentation.org/packages/phylobase/topics/phylo4-methods'>phylo4</a></code> class object, or a character that can be a newick
+ literal or apath to newick-containing file.</p></td>
     </tr>
     </table>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <p><a href='http://phylocanvas.org/docs/features/#rotate-branches'>http://phylocanvas.org/docs/features/#rotate-branches</a></p>
     
 
   </div>
@@ -131,9 +130,7 @@ an internal node, rotate the branch defined by the node</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#see-also">See also</a></li>
-          </ul>
+                </ul>
 
   </div>
 </div>

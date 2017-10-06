@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>rotate a branch — rotate_branch • phylocanvas</title>
+<title>load tree — load.tree • phylocanvas</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -98,42 +98,57 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>rotate a branch</h1>
+    <h1>load tree</h1>
     </div>
 
     
-    <p>given a <code><a href='phylocanvas.html'>phylocanvas</a></code> object and an nodeid for
-an internal node, rotate the branch defined by the node</p>
+    <p>load a newick tree.</p>
     
 
-    <pre class="usage"><span class='fu'>rotate_branch</span>(<span class='no'>phycnv</span>, <span class='no'>nodeid</span>)</pre>
+    <pre class="usage"><span class='fu'>load.tree</span>(<span class='no'>treefile</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>phycnv</th>
-      <td><p>Required.</p></td>
+      <th>treefile</th>
+      <td><p>Required. Path of phylogenetic tree to read</p></td>
     </tr>
     <tr>
-      <th>nodeid</th>
-      <td><p>Required.</p></td>
+      <th>...</th>
+      <td><p>Optional. Pass any other arguments to read.tree</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><a href='http://phylocanvas.org/docs/features/#rotate-branches'>http://phylocanvas.org/docs/features/#rotate-branches</a></p>
+    <p>a <code><a href='http://www.rdocumentation.org/packages/phylobase/topics/phylo4-methods'>phylo4</a></code> tree object.</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>this is the recommended way to load a tree for use with phylocanvas. The reason is that
+all of the javascript selector methods require that the nodes are named and the
+selection of nodes based on names is straightforward with <code><a href='http://www.rdocumentation.org/packages/phylobase/topics/phylo4-methods'>phylo4</a></code>
+objects. Therefore this function will read your newick tree, add names, and return a
+ <code><a href='http://www.rdocumentation.org/packages/phylobase/topics/phylo4-methods'>phylo4</a></code>  object that can be easily manipulated and subsetted
+generating custom displays.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>birdfile</span> <span class='kw'>&lt;-</span> <span class='fu'>system.file</span>(<span class='st'>"treedata/birdfamilies.tree"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"phylocanvas"</span>)
+<span class='no'>tree</span> <span class='kw'>&lt;-</span> <span class='fu'>load.tree</span>(<span class='no'>birdfile</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#see-also">See also</a></li>
-          </ul>
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

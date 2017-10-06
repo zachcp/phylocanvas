@@ -1,0 +1,81 @@
+---
+title: "Basic Use of Phylocanvas"
+author: "Zach Chrlop-Powers"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic Use of Phylocanvas}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Use phylocanvas to draw phylogenetic trees. Basic options to control the tree are availalbe in this top level function. The tree shape in controlled by the `treetype` option. Try 'radial' and 'heirarchical' as well.
+
+```{r, message=FALSE}
+library(phylocanvas)
+library(dplyr)
+
+phycanv <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "rectangular", alignlabels = T)
+```
+
+```{r}
+phycircle <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "circular", nodesize = 30, linewidth = 10)
+phycircle
+```
+
+## Stylize nodes
+
+Node styling options are available. Most of the appearance of a node can be changed here. Note below that colors can be either colornames, rgb strings or hex strings.
+
+```{r}
+# Note that colors are names, rgbs or hex
+phycanv %>%
+  style_node("A", nodesizeratio = 4, fillcolor="rgb(0, 255, 0)") %>% 
+  style_node("B", fillcolor = "blue") %>%
+  style_node("C", labeltextsize = 10, shape="triangle") %>%
+  style_node("D", fillcolor="#ffa500", highlighted=TRUE) 
+```
+
+## Collapse Branches
+
+```{r}
+phycircle %>% collapse_branch("E")
+```
+
+## Rotate Branches
+
+```{r}
+phycircle %>% rotate_branch("E")
+```
+
+
+## Select Branches
+
+```{r}
+phycanv %>% select_branch("B")
+
+phycanv %>% select_branch("E", cascade=TRUE)
+
+```
+
+## Highlight Nodes
+
+```{r}
+phycanv %>% highlight_node("B")
+
+```
+
+
+## Use Plugins
+
+Phylocanvas has a nubmer of different plugins that extend the basic tree. These include pluings ofr [metadata](https://github.com/phylocanvas/phylocanvas-plugin-metadata), [scale bars](https://github.com/phylocanvas/phylocanvas-plugin-scalebar), [svg export](https://github.com/phylocanvas/phylocanvas-plugin-export-svg), [context menu on the mouse](https://github.com/phylocanvas/phylocanvas-plugin-context-menu), and [history](https://github.com/phylocanvas/phylocanvas-plugin-history). We will try to add as many as reasonable. Currently this htmlwidget sis based on the [phylocanvas-quickstart](https://github.com/phylocanvas/phylocanvas-quickstart) so we can activate the history, context, scale, and metadata features.
+
+```{r}
+# Note the scalebar is active
+phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", showscalebar = TRUE)
+```
+

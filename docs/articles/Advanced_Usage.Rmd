@@ -1,0 +1,78 @@
+---
+title: "Advanced Use of Phylocanvas"
+author: "zach charlop-powers"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Advanced Use}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressMessages(library(magrittr))
+```
+
+## Base Tree
+
+```{r warning=FALSE}
+library(ape)
+library(phylocanvas)
+
+data("bird.families")
+phylocanvas(bird.families, treetype = "radial", 
+            width = 700, textsize = 10, nodesize = 10)
+```
+
+## Most Recent Common Ancestor
+
+Highlight the most recent common ancestor (MRCA).
+
+```{r warning=FALSE}
+
+# add internal nodenames
+birds  <- makeNodeLabel(bird.families)
+
+# convert to phylo4 which has a few nice convenicnece methods including the
+# ability to get names with nodes.
+birds <- phylobase::phylo4(birds)
+
+# get MRCA
+node  <- phylobase::MRCA(birds,c("Cerylidae", "Upupidae"))
+
+# get the node name
+nodename <- names(node)
+
+# highlight all submembers of the MRCA
+phylocanvas(birds, width = 700, textsize = 10, nodesize = 10) %>%
+  select_branch(nodeid=nodename, cascade=T)
+```
+
+```{r, warning=FALSE}
+phylocanvas(birds, width = 700, textsize = 10, nodesize = 10, treetype = "radial") %>% 
+  select_branch(nodeid=nodename, cascade=T)
+
+```
+
+## Multiple MRCA 
+
+To highlight multiple clades, you can identify clades by node nubmer, in this case by MRCA. Then you can stylize the descendant nodes.
+
+```{r warning=FALSE}
+phycanv     <- phylocanvas(birds, width = 700, textsize = 10, nodesize = 10, treetype = "radial") 
+nodenames   <- get.descendants(birds, nodename)
+clade2names <- get.descendants(birds, phylobase::MRCA(birds, c("Pteroclidae", "Jacanidae")))
+
+for (nodename in nodenames) {
+  phycanv <- style_node(phycanv, nodeid = nodename, fillcolor="green")
+}
+for (nodename in clade2names) {
+  phycanv <- style_node(phycanv, nodeid = nodename, fillcolor="red")
+}
+
+
+phycanv
+
+
+```
