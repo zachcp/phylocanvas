@@ -1,32 +1,33 @@
-an htmlwidget for phylocanvas JS
-================================
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+phylocanvas
+===========
 
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/phylocanvas)](https://cran.r-project.org/package=phylocanvas)
 
-
-Latest Information
-------------------
-
-See the [documentation webpage](https://zachcp.github.io/phylocanvas/) fot the latest information.
+Use phylocanvas to draw phylogenetic trees in the browser. Basic options to control the tree are availalbe in this top level function. The tree shape in controlled by the `treetype` option. Try 'radial' and 'heirarchical' as well.
 
 Installation
 ------------
 
+You can install phylocanvas from github with:
+
 ``` r
-devtools::install_github("zachcp/phylocanvas")
+install.packages("phylocanvas")
 ```
 
-Basic Usage
------------
+Example
+-------
 
-Use phylocanvas to draw phylogenetic trees. Basic options to control the tree are availalbe in this top level function. The tree shape in controlled by the `treetype` option. Try 'radial' and 'heirarchical' as well.
+This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(phylocanvas)
-library(dplyr)
 
-phycanv <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "rectangular", alignlabels = T)
+install.packages("phylocanvas")
 
+tree <- ape::read.tree("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;")
+
+phycanv <- phylocanvas(tree,treetype = "rectangular", alignlabels = T)
 
 # stylize nodes
 phycanv %>%
@@ -35,6 +36,11 @@ phycanv %>%
   style_node("C", labeltextsize = 10, shape="triangle") %>%
   style_node("D", fillcolor="#ffa500", highlighted=TRUE) 
 ```
+
+Latest Information
+------------------
+
+See the [documentation webpage](https://zachcp.github.io/phylocanvas/) fot the latest information.
 
 Roadmap
 -------
