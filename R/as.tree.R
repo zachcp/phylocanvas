@@ -27,18 +27,4 @@ setMethod("as_tree", "phylo4", function(phy) {
   phy <- as(phy, "phylo")
   as_tree(phy)
 })
-################################################################################
-#' @aliases as_tree, character, character-method
-#' @rdname as_tree-methods
-#' @include load.tree.R
-setMethod("as_tree", "character", function(phy) {
-  if (file.exists(phy)) {
-    newphy <- NULL
-    try(newphy <- load.tree(phy))
-    if (!is.null(newphy)) {
-      return(newphy)
-    }
-  } else {
-    return(phy)
-  }
-})
+
