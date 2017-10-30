@@ -17,6 +17,7 @@ suppressMessages(library(magrittr))
 ## Base Tree
 
 ```{r warning=FALSE}
+library(magrittr)
 library(ape)
 library(phylocanvas)
 

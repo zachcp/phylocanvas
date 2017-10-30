@@ -19,8 +19,8 @@ suppressMessages(library(magrittr))
 Use phylocanvas to draw phylogenetic trees. Basic options to control the tree are availalbe in this top level function. The tree shape in controlled by the `treetype` option. Try 'radial' and 'heirarchical' as well.
 
 ```{r, message=FALSE}
+library(magrittr)
 library(phylocanvas)
-library(dplyr)
 
 tree = ape::read.tree(text = "(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;")
 phycanv <- phylocanvas(tree, treetype = "rectangular", alignlabels = T)
