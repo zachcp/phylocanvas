@@ -23,7 +23,7 @@ RoxygenNote: 6.0.1
 VignetteBuilder: knitr
 Collate:
     'load.tree.R'
-    'as.tree.R'
+    'as_tree.R'
     'get.descendants.R'
     'nodes.branches.R'
     'phylocanvas.R'
