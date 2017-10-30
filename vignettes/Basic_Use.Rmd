@@ -9,9 +9,12 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+suppressMessages(library(magrittr))
 ```
+
 
 Use phylocanvas to draw phylogenetic trees. Basic options to control the tree are availalbe in this top level function. The tree shape in controlled by the `treetype` option. Try 'radial' and 'heirarchical' as well.
 
@@ -19,11 +22,12 @@ Use phylocanvas to draw phylogenetic trees. Basic options to control the tree ar
 library(phylocanvas)
 library(dplyr)
 
-phycanv <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "rectangular", alignlabels = T)
+tree = ape::read.tree(text = "(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;")
+phycanv <- phylocanvas(tree, treetype = "rectangular", alignlabels = T)
 ```
 
 ```{r}
-phycircle <- phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", treetype = "circular", nodesize = 30, linewidth = 10)
+phycircle <- phylocanvas(tree, treetype = "circular", nodesize = 30, linewidth = 10)
 phycircle
 ```
 
@@ -76,6 +80,7 @@ Phylocanvas has a nubmer of different plugins that extend the basic tree. These 
 
 ```{r}
 # Note the scalebar is active
-phylocanvas("(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;", showscalebar = TRUE)
+tree = ape::read.tree(text="(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;")
+phylocanvas(tree, showscalebar = TRUE)
 ```
 
