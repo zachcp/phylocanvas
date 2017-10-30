@@ -39,7 +39,7 @@ HTMLWidgets.widget({
         // apply node styles after the tree is loaded
         if (x.nodestyles !== null) {
           Object.keys(x.nodestyles).forEach(function(key){
-          var leaf = tree.findLeaves(key)[0];
+          var leaf = tree.findLeaves("^" + key + "$")[0];
           leaf.setDisplay( x.nodestyles[key] );
           leaf.highlighted = x.nodestyles[key].highlighted;
           });
