@@ -11,9 +11,9 @@ Imports:
     ape (>= 4.0),
     phylobase,
     htmlwidgets,
-    magrittr,
     methods (>= 3.3.0)
 Suggests:
+    magrittr,
     knitr,
     rmarkdown
 License: MIT + file LICENSE
