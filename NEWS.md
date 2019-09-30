@@ -1,3 +1,7 @@
+# 0.2.0
+
+* add R  and js handlers for the phylocanvas events
+
 # 0.1.2
 
 * fix text size issue

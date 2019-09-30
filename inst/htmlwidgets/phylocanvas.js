@@ -114,6 +114,7 @@ HTMLWidgets.widget({
         
         tree.on('error', ({ error }) => {
           console.log(error);
+          Shiny.onInputChange("error");
         });
 
       },

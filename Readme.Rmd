@@ -43,7 +43,6 @@ phycanv %>%
   style_node("B", fillcolor = "blue") %>%
   style_node("C", labeltextsize = 10, shape="triangle") %>%
   style_node("D", fillcolor="#ffa500", highlighted=TRUE) 
-
 ```
 
 
@@ -63,3 +62,44 @@ Reference
 ---------
 
 The sourcecode for the phylocanvas htmltools package can be found at the [github repo](https://github.com/zachcp/phylocanvas). For more information about the phylocanvas JavaScript library, check out the [phylocanvas website](http://phylocanvas.org).
+
+Events
+------
+
+The `phylocanvas` events are catched and can be used from a shiny app. The following events can be used:
+
+### Subtree drawn
+
+```{r subtree_event, eval=FALSE}
+input$subtree_drawn # returns the node from which the tree was drawn
+```
+
+### Nodes selected
+
+```{r udpate_event, eval=FALSE}
+input$tree_selection # returns the list of selected nodes
+```
+
+### Tree loading
+
+```{r loading_event, eval=FALSE}
+input$tree_loading
+```
+
+### Before tree is drawn
+
+```{r before_draw_event, eval=FALSE}
+input$tree_beforeFirstDraw
+```
+
+### Tree loaded
+
+```{r loaded_event, eval=FALSE}
+input$tree_loaded
+```
+
+### Error
+
+```{r error_event, eval=FALSE}
+input$error
+```
