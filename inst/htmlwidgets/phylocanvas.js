@@ -33,6 +33,7 @@ HTMLWidgets.widget({
 
         // loading will draw the tree
         tree.load(x.tree);
+        console.log(tree);
         
         tree.setTextSize(x.textsize);
 
@@ -88,6 +89,33 @@ HTMLWidgets.widget({
 
         // activate all styles
         tree.draw();
+        
+        tree.on('subtree', ({ node }) => {
+          Shiny.onInputChange("subtree_drawn", node);
+        });
+        
+        tree.on('updated', ({ property, nodeIds }) => {
+          if (property === 'selected') {
+            Shiny.onInputChange("tree_selection", nodeIds);
+          }
+        });
+        
+        tree.on('loading', () => {
+          Shiny.onInputChange("tree_loading");
+        });
+        
+        tree.on('beforeFirstDraw', () => {
+          Shiny.onInputChange("tree_beforeFirstDraw");
+        });
+        
+        tree.on('loaded', () => {
+          Shiny.onInputChange("tree_loaded");
+        });
+        
+        tree.on('error', ({ error }) => {
+          console.log(error);
+          Shiny.onInputChange("error");
+        });
 
       },
 
@@ -100,3 +128,4 @@ HTMLWidgets.widget({
     };
   }
 });
+
