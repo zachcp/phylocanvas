@@ -1,6 +1,6 @@
 Package: phylocanvas
 Title: Interactive Phylogenetic Trees Using the 'Phylocanvas' JavaScript Library
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(person("zachary", "charlop-powers", email = "zach.charlop.powers@gmail.com", role = c("aut", "cre")),
     person("Pierre-Yves", "Dupont", email = "pierre.dupont@esr.cri.nz", role = "ctb"))
 Description: Create and customize interactive phylogenetic trees using the 'phylocanvas' JavaScript library and the 'htmlwidgets' package. These trees can be used directly from the R console, from 'RStudio', in Shiny apps, and in R Markdown documents.  See <http://phylocanvas.org/>  for more information on the 'phylocanvas' library.
